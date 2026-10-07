@@ -19,13 +19,13 @@
     (Hypatos -> Polypus). Styles live in OrderManagement.razor.css and use the
     Polypus design tokens, so nothing here copies the reference theme.
 
-    Linked from: the /workforce bundle grid.
+    Linked from: the /Product bundle grid.
 *@
 
-<PageTitle>Order Management - Polypus Workforce</PageTitle>
+<PageTitle>Order Management - Polypus Product</PageTitle>
 
 <HeadContent>
-    <meta name="description" content="A workforce validating sales orders against catalogue, pricing and volume rules, then creating clean orders in your ERP." />
+    <meta name="description" content="A Product validating sales orders against catalogue, pricing and volume rules, then creating clean orders in your ERP." />
 </HeadContent>
 
 @* ==========================================================================
@@ -34,14 +34,16 @@
 <section class="section om-hero">
     <div class="container">
         <div class="om-hero__inner">
-            <p class="eyebrow">The GBS Workforce for Order Management</p>
+            <p class="eyebrow">The GBS Product for Order Management</p>
             <h1 class="display om-hero__title">Capture all new business. Do 0% <em>manual work.</em></h1>
 
             <div class="om-hero__action">
-                <a class="btn btn--primary btn--lg" href="#om-skills">
-                    Start Now
-                    <AppIcon Name="arrow-right" Size="18" />
-                </a>
+                <button type="button"
+        class="btn btn--primary btn--lg"
+        @onclick="ScrollToBook">
+    Start Now
+    <AppIcon Name="arrow-right" Size="18" />
+</button>
             </div>
         </div>
     </div>
@@ -55,7 +57,7 @@
         <div class="om-how">
             <div>
                 <p class="eyebrow">How it works</p>
-                <h2 class="h2 mt-2">A workforce for sales order consistency – peak season or slow</h2>
+                <h2 class="h2 mt-2">A Product for sales order consistency – peak season or slow</h2>
                 <p class="om-how__body mt-4">
                     Orders come in from email, portals, EDI, and more. Agents identify, classify, and
                     match each to the latest catalogue, even with typos or outdated codes, then
@@ -100,7 +102,7 @@
 @* ==========================================================================
    4. Closing CTA
    ========================================================================== *@
-<section class="section" id="om-cta">
+<section class="section" id="ip-book">
     <div class="container">
         <div class="om-cta">
             <h2>Manage every sales order <em>with speed</em></h2>
@@ -125,8 +127,12 @@
         <FaqList Items="Questions" CssClass="mt-7" />
     </div>
 </section>
-
+@inject IJSRuntime JS
 @code {
+     private async Task ScrollToBook()
+    {
+        await JS.InvokeVoidAsync("scrollToElement", "ip-book");
+    }
     private sealed record Skill(string Title, string Body, string Complexity);
 
     private static readonly Skill[] Skills =
@@ -152,8 +158,8 @@
         new Faq
         {
             Category = "Order Management",
-            Question = "What does the Order Management Workforce do?",
-            Answer = "The Polypus order management workforce captures incoming sales orders, validates " +
+            Question = "What does the Order Management Product do?",
+            Answer = "The Polypus order management Product captures incoming sales orders, validates " +
                      "them against catalogue, pricing and volume rules, routes exceptions to the " +
                      "right owner and creates clean orders in your ERP."
         },
@@ -169,8 +175,8 @@
         new Faq
         {
             Category = "Order Management",
-            Question = "How does the Order Management Workforce cope with seasonal peaks?",
-            Answer = "The Order Management Workforce is designed for both peak season and quiet " +
+            Question = "How does the Order Management Product cope with seasonal peaks?",
+            Answer = "The Order Management Product is designed for both peak season and quiet " +
                      "periods: it scales with order volume rather than depending on manual capacity."
         },
         new Faq
@@ -183,7 +189,7 @@
         new Faq
         {
             Category = "Order Management",
-            Question = "What type of files can the Order Management Workforce process?",
+            Question = "What type of files can the Order Management Product process?",
             Answer = "Polypus processes sales orders in any format — image, PDF, XML/JSON, Word, or " +
                      "Excel — regardless of whether they come in by email, scan, e-commerce portal, " +
                      "or API."
@@ -191,8 +197,8 @@
         new Faq
         {
             Category = "Order Management",
-            Question = "What is the cost of the Order Management Workforce?",
-            Answer = "Cost is based on which Skills your Order Management Workforce uses, and how " +
+            Question = "What is the cost of the Order Management Product?",
+            Answer = "Cost is based on which Skills your Order Management Product uses, and how " +
                      "often each one is triggered — you only pay when a Skill is applied. E.g.: the " +
                      "Duplicate Prevention skill incurs a cost only when a duplicate order is caught " +
                      "(the same order arriving by email and again via marketplace); if no duplicate " +

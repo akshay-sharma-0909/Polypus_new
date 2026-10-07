@@ -19,13 +19,13 @@
     (Hypatos -> Polypus). Styles live in InvoiceProcessing.razor.css and use the
     Polypus design tokens, so nothing here copies the reference theme.
 
-    Linked from: the header "Workforce" menu and the /workforce bundle grid.
+    Linked from: the header "Product" menu and the /workforce bundle grid.
 *@
 
-<PageTitle>Invoice Processing - Polypus Workforce</PageTitle>
+<PageTitle>Invoice Processing - Polypus Product</PageTitle>
 
 <HeadContent>
-    <meta name="description" content="A workforce that captures, codes, matches and validates every invoice, then prepares a controlled posting in your ERP." />
+    <meta name="description" content="A product that captures, codes, matches and validates every invoice, then prepares a controlled posting in your ERP." />
 </HeadContent>
 
 @* ==========================================================================
@@ -35,14 +35,16 @@
     <div class="container">
         <div class="ip-hero__inner">
             <div>
-                <p class="eyebrow">The GBS Workforce for Invoice Processing</p>
+                <p class="eyebrow">The GBS Product for Invoice Processing</p>
                 <h1 class="display ip-hero__title">Don't let invoices cost more than their face value.</h1>
 
                 <div class="ip-hero__action">
-                    <a class="btn btn--primary btn--lg" href="#ip-skills">
-                        Start Now
-                        <AppIcon Name="arrow-right" Size="18" />
-                    </a>
+                    <button type="button"
+        class="btn btn--primary btn--lg"
+        @onclick="ScrollToBook">
+    Start Now
+    <AppIcon Name="arrow-right" Size="18" />
+</button>
                 </div>
             </div>
 
@@ -66,10 +68,10 @@
 <section class="section section--paper-alt">
     <div class="container">
         <p class="eyebrow">How it works</p>
-        <h2 class="h2 mt-2">A workforce shielding margins from the cost of mismanaged invoices</h2>
+        <h2 class="h2 mt-2">A product shielding margins from the cost of mismanaged invoices</h2>
         <p class="ip-how__body mt-4">
             An invoice can take 70+ actions to post. If done manually, that means more errors and
-            slower cycles. Our GBS Workforce handles every step - capture, matching, coding,
+            slower cycles. Our GBS Product handles every step - capture, matching, coding,
             approval, compliance - flagging mismatches before they become write-offs, duplicate
             payments or fines.
         </p>
@@ -156,7 +158,7 @@
 @* ==========================================================================
    5. Closing CTA
    ========================================================================== *@
-<section class="section">
+<section class="section" id="ip-book">
     <div class="container">
         <div class="ip-cta">
             <h2>Get invoices posted in days, not weeks</h2>
@@ -166,13 +168,21 @@
                     Book a walkthrough
                     <AppIcon Name="arrow-right" Size="18" />
                 </a>
-                <a class="btn btn--on-dark btn--lg" href="/contact">Get in Touch</a>
+
+                <a class="btn btn--on-dark btn--lg" href="/contact">
+                    Get in Touch
+                </a>
             </div>
         </div>
     </div>
 </section>
 
+@inject IJSRuntime JS
 @code {
+    private async Task ScrollToBook()
+    {
+        await JS.InvokeVoidAsync("scrollToElement", "ip-book");
+    }
     private int _tab;
 
     private void SelectTab(int index) => _tab = index;
@@ -254,7 +264,7 @@
 
     private static readonly Story[] Stories =
     [
-        new("1M+ invoices from 15,000 suppliers handled with an agentic workforce", "chart"),
+        new("1M+ invoices from 15,000 suppliers handled with an agentic product", "chart"),
         new("Agentic PO matching for 88 companies in under 4 months", "users"),
         new("Repeatable agentic transformation for an energy giant across 30+ countries", "globe")
     ];

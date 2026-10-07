@@ -19,13 +19,13 @@
     (Hypatos -> Polypus). Styles live in DeliveryNotes.razor.css and use the
     Polypus design tokens, so nothing here copies the reference theme.
 
-    Linked from: the /workforce bundle grid.
+    Linked from: the /Product bundle grid.
 *@
 
-<PageTitle>Delivery Notes - Polypus Workforce</PageTitle>
+<PageTitle>Delivery Notes - Polypus Product</PageTitle>
 
 <HeadContent>
-    <meta name="description" content="A workforce turning delivery notes into validated receipts, so finance decides pay or hold on facts." />
+    <meta name="description" content="A Product turning delivery notes into validated receipts, so finance decides pay or hold on facts." />
 </HeadContent>
 
 @* ==========================================================================
@@ -34,14 +34,16 @@
 <section class="section dn-hero">
     <div class="container">
         <div class="dn-hero__inner">
-            <p class="eyebrow">The GBS Workforce for Delivery Notes</p>
+            <p class="eyebrow">The GBS Product for Delivery Notes</p>
             <h1 class="display dn-hero__title">For finance teams who are <em>done guessing</em> pay or hold.</h1>
 
             <div class="dn-hero__action">
-                <a class="btn btn--primary btn--lg" href="#dn-skills">
-                    Start Now
-                    <AppIcon Name="arrow-right" Size="18" />
-                </a>
+                <button type="button"
+        class="btn btn--primary btn--lg"
+        @onclick="ScrollToBook">
+    Start Now
+    <AppIcon Name="arrow-right" Size="18" />
+</button>
             </div>
         </div>
     </div>
@@ -55,7 +57,7 @@
         <div class="dn-how">
             <div>
                 <p class="eyebrow">How it works</p>
-                <h2 class="h2 mt-2">A workforce making even partial deliveries a breeze</h2>
+                <h2 class="h2 mt-2">A Product making even partial deliveries a breeze</h2>
                 <p class="dn-how__body mt-4">
                     Agents capture delivery notes from email, EDI, carrier portal, or scan, and
                     validate them against the PO. Mismatches are flagged and resolved before AP sees
@@ -111,7 +113,7 @@
 @* ==========================================================================
    4. Closing CTA
    ========================================================================== *@
-<section class="section">
+<section class="section" id="ip-book">
     <div class="container">
         <div class="dn-cta">
             <h2><em>Close the gap</em> between what arrived and what gets paid</h2>
@@ -136,8 +138,12 @@
         <FaqList Items="Questions" CssClass="mt-7" />
     </div>
 </section>
-
+@inject IJSRuntime JS
 @code {
+     private async Task ScrollToBook()
+    {
+        await JS.InvokeVoidAsync("scrollToElement", "ip-book");
+    }
     private sealed record ReceiptLine(string Line, string Quantity, string Label, string State, string Icon);
 
     private static readonly ReceiptLine[] ReceiptLines =
@@ -171,15 +177,15 @@
         new Faq
         {
             Category = "Delivery Notes",
-            Question = "What does the Delivery Notes Workforce do?",
-            Answer = "The Polypus Delivery Notes Workforce turns delivery notes into validated goods " +
+            Question = "What does the Delivery Notes Product do?",
+            Answer = "The Polypus Delivery Notes Product turns delivery notes into validated goods " +
                      "receipts: capturing the document, matching lines against the order, and " +
                      "recording what actually arrived, so finance decides pay or hold on facts."
         },
         new Faq
         {
             Category = "Delivery Notes",
-            Question = "How does the Delivery Notes Workforce handle partial deliveries?",
+            Question = "How does the Delivery Notes Product handle partial deliveries?",
             Answer = "Line by line. A partial delivery is recorded as exactly that, so the receipt " +
                      "reflects reality and the next delivery reconciles against what remains."
         },
@@ -195,7 +201,7 @@
         {
             Category = "Delivery Notes",
             Question = "Which document formats and document types are supported?",
-            Answer = "The Polypus Delivery Notes Workforce captures delivery notes as scanned paper " +
+            Answer = "The Polypus Delivery Notes Product captures delivery notes as scanned paper " +
                      "notes, images, PDFs, XML/JSON, or Word and Excel files, including " +
                      "multi-document batches, however they arrive: by email, scan, e-invoicing, or " +
                      "API integration."
@@ -203,8 +209,8 @@
         new Faq
         {
             Category = "Delivery Notes",
-            Question = "What is the cost of the Delivery Notes Workforce?",
-            Answer = "Calculating the cost of your Delivery Notes Workforce depends on the GBS Skills " +
+            Question = "What is the cost of the Delivery Notes Product?",
+            Answer = "Calculating the cost of your Delivery Notes Product depends on the GBS Skills " +
                      "it includes and how many times each GBS Skill is applied in order to process a " +
                      "document. E.g.: if a delivery note does not require explicit confirmation by " +
                      "an internal approver, the Supplier & Approver Communication skill does not get " +

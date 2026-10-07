@@ -19,13 +19,13 @@
     (Hypatos -> Polypus). Styles live in OrderConfirmations.razor.css and use the
     Polypus design tokens, so nothing here copies the reference theme.
 
-    Linked from: the /workforce bundle grid.
+    Linked from: the /product bundle grid.
 *@
 
-<PageTitle>Order Confirmations - Polypus Workforce</PageTitle>
+<PageTitle>Order Confirmations - Polypus product</PageTitle>
 
 <HeadContent>
-    <meta name="description" content="A workforce catching and matching every line, price and quantity on supplier order confirmations, so procurement sees which orders deviate." />
+    <meta name="description" content="A product catching and matching every line, price and quantity on supplier order confirmations, so procurement sees which orders deviate." />
 </HeadContent>
 
 @* ==========================================================================
@@ -35,14 +35,16 @@
     <div class="container">
         <div class="oc-hero__inner">
             <div>
-                <p class="eyebrow">The GBS Workforce for Order Confirmations</p>
+                <p class="eyebrow">The GBS product for Order Confirmations</p>
                 <h1 class="display oc-hero__title">Ensure your POs turn into correct deliveries, every time.</h1>
 
                 <div class="oc-hero__action">
-                    <a class="btn btn--primary btn--lg" href="#oc-skills">
-                        Start Now
-                        <AppIcon Name="arrow-right" Size="18" />
-                    </a>
+                    <button type="button"
+        class="btn btn--primary btn--lg"
+        @onclick="ScrollToBook">
+    Start Now
+    <AppIcon Name="arrow-right" Size="18" />
+</button>
                 </div>
             </div>
 
@@ -88,10 +90,10 @@
         <div class="oc-how">
             <div>
                 <p class="eyebrow">How it works</p>
-                <h2 class="h2 mt-2">A workforce for instant clarity on order status</h2>
+                <h2 class="h2 mt-2">A product for instant clarity on order status</h2>
                 <p class="oc-how__body mt-4">
                     POs are structured, but acknowledgments not so much. From PDFs to emails, our
-                    GBS workforce turns unstructured supplier replies into ERP-ready
+                    GBS product turns unstructured supplier replies into ERP-ready
                     confirmations—fast, accurate, and touchless.
                 </p>
             </div>
@@ -132,7 +134,7 @@
 @* ==========================================================================
    4. Closing CTA
    ========================================================================== *@
-<section class="section">
+<section class="section" id="ip-book">
     <div class="container">
         <div class="oc-cta">
             <h2>Manage every purchase order with confidence</h2>
@@ -157,8 +159,12 @@
         <FaqList Items="Questions" CssClass="mt-7" />
     </div>
 </section>
-
+@inject IJSRuntime JS
 @code {
+     private async Task ScrollToBook()
+    {
+        await JS.InvokeVoidAsync("scrollToElement", "ip-book");
+    }
     private sealed record Skill(string Title, string Body, string Complexity);
 
     private static readonly Skill[] Skills =
@@ -182,8 +188,8 @@
         new Faq
         {
             Category = "Order Confirmations",
-            Question = "What does the Order Confirmations Workforce do?",
-            Answer = "The Polypus Order Confirmations Workforce reads supplier order confirmations, " +
+            Question = "What does the Order Confirmations Product do?",
+            Answer = "The Polypus Order Confirmations Product reads supplier order confirmations, " +
                      "matches them against the purchase order on price, quantity and dates, and gives " +
                      "procurement clarity on which orders are confirmed as expected and which deviate."
         },
@@ -199,7 +205,7 @@
         {
             Category = "Order Confirmations",
             Question = "What happens when a confirmation deviates from the PO?",
-            Answer = "When the Workforce cannot resolve a deviation with the current business " +
+            Answer = "When the product cannot resolve a deviation with the current business " +
                      "knowledge, it escalates the case as an exception to the owner, with the reason " +
                      "and the context needed to resolve it, including supplier communication where " +
                      "follow-up is needed."
@@ -207,14 +213,14 @@
         new Faq
         {
             Category = "Order Confirmations",
-            Question = "Does the workforce communicate with suppliers?",
+            Question = "Does the Product communicate with suppliers?",
             Answer = "Yes. A dedicated Supplier & Approver Communication Skill handles clarifications " +
                      "and follow-ups inside the process instead of in scattered channels."
         },
         new Faq
         {
             Category = "Order Confirmations",
-            Question = "What type of files can the Order Confirmations Workforce process?",
+            Question = "What type of files can the Order Confirmations Product process?",
             Answer = "Polypus reads order confirmations as images, PDFs, XML/JSON, or Word and Excel " +
                      "files, however they arrive: by email, scan, vendor portal, client portal, or " +
                      "internal system logs."
@@ -222,8 +228,8 @@
         new Faq
         {
             Category = "Order Confirmations",
-            Question = "What is the cost of the Order Confirmations Workforce?",
-            Answer = "Calculating the cost of your Order Confirmations Workforce depends on the GBS " +
+            Question = "What is the cost of the Order Confirmations Product?",
+            Answer = "Calculating the cost of your Order Confirmations Product depends on the GBS " +
                      "Skills deployed and how many times each GBS Skill is applied to process a " +
                      "document. E.g.: if a document does not require matching against a PO, the PO " +
                      "Matching skill does not get triggered, and therefore does not incur a cost. " +

@@ -3,7 +3,7 @@ using Polypus.Web.Models;
 namespace Polypus.Web.Services;
 
 /// <summary>
-/// The content of every page reached from the header: Workforce, Platform, Resources,
+/// The content of every page reached from the header: Product, Platform, Resources,
 /// Company sub-pages, FAQ and the integration connectors.
 ///
 /// The copy mirrors the reference navigation's information architecture so the header
@@ -18,16 +18,16 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel Workforce = new()
     {
-        Section = "Workforce",
-        Eyebrow = "Workforce",
-        Title = "The workforce that runs your document-heavy processes",
+        Section = "Product",
+        Eyebrow = "Product",
+        Title = "The Product that runs your document-heavy processes",
         Lead = "A team of Polypus agents that runs document-heavy finance and operations processes " +
                "from intake to a controlled action in your system of record. Agents combine reusable " +
                "skills, work inside your approval guidelines and connect to your ERP, so the work " +
                "gets done while your team supervises outcomes and exceptions.",
         MetaDescription = "A team of Polypus agents running document-heavy finance and operations " +
                           "processes from intake to a controlled action in your system of record.",
-        Pills = ["Inside the workforce", "Skills, agents and controls"],
+        Pills = ["Inside the Product", "Skills, agents and controls"],
         Sections =
         [
             new ContentSection(
@@ -38,26 +38,26 @@ public static class ContentPageCatalog
                 [
                     new ContentItem("Skills", "Select the skills your process needs to cover.", "sparkle"),
                     new ContentItem("Agents", "We staff agents that match your skills picks.", "user-check"),
-                    new ContentItem("Workforce", "Agents with the right skills become your workforce in production.", "users")
+                    new ContentItem("Product", "Agents with the right skills become your Product in production.", "users")
                 ]),
             new ContentSection(
                 "Pre-packaged bundles",
-                "Your workforce, ready to deploy",
-                "Start with a standard workforce - trialled, tested and built agentic from the ground " +
+                "Your Product, ready to deploy",
+                "Start with a standard Product - trialled, tested and built agentic from the ground " +
                 "up for the most common scenarios.",
                 [
-                    new ContentItem("Invoice Processing", "A workforce that captures, codes, matches and validates every invoice.", "scan"),
-                    new ContentItem("Order Confirmations", "A workforce catching and matching every line, price and quantity.", "check-circle"),
-                    new ContentItem("Delivery Notes", "A workforce turning delivery notes into validated receipts.", "layers"),
-                    new ContentItem("Order Management", "A workforce validating sales orders against catalogue, pricing and volume.", "flow"),
-                    new ContentItem("Dunning Letters", "A workforce that captures, matches and resolves every dunning letter.", "mail"),
-                    new ContentItem("Build Your Own", "Create your own workforce directly on the Polypus platform.", "sparkle")
+                    new ContentItem("Invoice Processing", "A Product that captures, codes, matches and validates every invoice.", "scan"),
+                    new ContentItem("Order Confirmations", "A Product catching and matching every line, price and quantity.", "check-circle"),
+                    new ContentItem("Delivery Notes", "A Product turning delivery notes into validated receipts.", "layers"),
+                    new ContentItem("Order Management", "A Product validating sales orders against catalogue, pricing and volume.", "flow"),
+                    new ContentItem("Dunning Letters", "A Product that captures, matches and resolves every dunning letter.", "mail"),
+                    new ContentItem("Build Your Own", "Create your own Product directly on the Polypus platform.", "sparkle")
                 ]),
             new ContentSection(
                 "Scale",
-                "A workforce that can help you scale",
+                "A Product that can help you scale",
                 "Deploy seamless workflows across every major pillar: from procurement and sales to " +
-                "accounts payable and receivable. The Polypus workforce has built-in controls and " +
+                "accounts payable and receivable. The Polypus product has built-in controls and " +
                 "explainable decisions, so you can release human capacity to focus on the tasks only " +
                 "people can do.",
                 []),
@@ -71,18 +71,18 @@ public static class ContentPageCatalog
             new ContentSection(
                 "Getting started",
                 "How large enterprises usually start",
-                "With a land-and-expand approach: the first workforce takes on the highest-volume, " +
+                "With a land-and-expand approach: the first product takes on the highest-volume, " +
                 "most error-prone document type or process - the one creating disruptive manual " +
                 "reconciliation work. Once the results pass the agreed acceptance checks, the " +
-                "workforce expands to further entities, or an adjacent workforce is deployed.",
+                "product expands to further entities, or an adjacent product is deployed.",
                 [])
         ],
         Faqs =
         [
             new Faq
             {
-                Category = "Workforce",
-                Question = "What is an agentic workforce?",
+                Category = "Product",
+                Question = "What is an agentic product?",
                 Answer = "A team of Polypus agents that runs document-heavy finance and operations " +
                          "processes from intake to a controlled action in your system of record. " +
                          "Agents combine reusable skills, work inside your approval guidelines and " +
@@ -91,44 +91,44 @@ public static class ContentPageCatalog
             },
             new Faq
             {
-                Category = "Workforce",
+                Category = "Product",
                 Question = "How is this different from buying more software?",
                 Answer = "A tool asks your process to fit the scenarios and document variations it was " +
-                         "built for. An agentic workforce with language understanding works the other " +
+                         "built for. An agentic product with language understanding works the other " +
                          "way around: it runs on high-level guidance and produces the next step or the " +
                          "outcome - a document posted, confirmed or flagged. Your team manages the " +
                          "exceptions instead of the blind spots of a tool."
             },
             new Faq
             {
-                Category = "Workforce",
-                Question = "Which processes can the workforce run?",
+                Category = "Product",
+                Question = "Which processes can the product run?",
                 Answer = "Pre-packaged, ready-to-deploy bundles for invoice processing, order " +
                          "confirmations, delivery notes, sales order management and dunning letter " +
-                         "automation. Teams can also build their own workforce to capture documents " +
+                         "automation. Teams can also build their own product to capture documents " +
                          "beyond the standard list."
             },
             new Faq
             {
-                Category = "Workforce",
+                Category = "Product",
                 Question = "Does it work with our existing ERP and systems?",
-                Answer = "Yes. A workforce connects to major enterprise systems through native " +
+                Answer = "Yes. A product connects to major enterprise systems through native " +
                          "connectors and acts inside your existing process: validations, approvals " +
                          "and postings follow the procedures your organization already has in place."
             },
             new Faq
             {
-                Category = "Workforce",
-                Question = "What does Build Your Own Workforce mean?",
+                Category = "Product",
+                Question = "What does Build Your Own Product mean?",
                 Answer = "Build Your Own is the offer for documents outside the available named " +
                          "solutions. You get build access to the Polypus platform and create your own " +
-                         "workforce for entirely new document types, with the same controls and " +
+                         "product for entirely new document types, with the same controls and " +
                          "integrations available across the standard offering."
             },
             new Faq
             {
-                Category = "Workforce",
-                Question = "How does a workforce keep humans in control?",
+                Category = "Product",
+                Question = "How does a product keep humans in control?",
                 Answer = "Every exception is logged with a specific reason and routed to a named owner. " +
                          "Approvals follow your authority rules, and each decision leaves a trail: what " +
                          "the agent read, what it decided, and what the system of record did. Reviewers " +
@@ -141,7 +141,7 @@ public static class ContentPageCatalog
     public static readonly ContentPageModel Skills = new()
     {
         Section = "Skills",
-        Eyebrow = "Workforce",
+        Eyebrow = "Product",
         Title = "Scaled operations run on the right skills",
         Lead = "Polypus offers a growing library of pre-packaged skills. Pick the ones your process " +
                "needs and our agents will deliver them.",
@@ -200,13 +200,13 @@ public static class ContentPageCatalog
                 Category = "Skills",
                 Question = "Are the skills ready to use?",
                 Answer = "Yes. The library is live in production, and each skill is built to fit the " +
-                         "workforce you go live with."
+                         "product you go live with."
             },
             new Faq
             {
                 Category = "Skills",
                 Question = "Can skills be combined?",
-                Answer = "Yes. Skills define what your selected workforce will do and come " +
+                Answer = "Yes. Skills define what your selected product will do and come " +
                          "pre-packaged in it. You choose which of the pre-packaged skills go live and " +
                          "which are left out, so you do not pay for what you do not use."
             }
@@ -215,19 +215,19 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel InvoiceProcessing = new()
     {
-        Section = "Workforce / Invoice Processing",
-        Eyebrow = "Workforce",
+        Section = "Product / Invoice Processing",
+        Eyebrow = "Product",
         Title = "Don't let invoices cost more than their face value.",
         Lead = "An invoice can take 70+ actions to post. If done manually, that means more errors and " +
-               "slower cycles. The workforce handles every step - capture, matching, coding, approval, " +
+               "slower cycles. The product handles every step - capture, matching, coding, approval, " +
                "compliance - flagging mismatches before they become write-offs, duplicate payments or fines.",
-        MetaDescription = "A workforce that captures, codes, matches and validates every invoice " +
+        MetaDescription = "A product that captures, codes, matches and validates every invoice " +
                           "before it posts.",
         Sections =
         [
             new ContentSection(
                 "How it works",
-                "A workforce shielding margins from the cost of mismanaged invoices",
+                "A product shielding margins from the cost of mismanaged invoices",
                 null,
                 []),
             new ContentSection(
@@ -256,7 +256,7 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Invoice Processing",
-                Question = "What does the invoice processing workforce do?",
+                Question = "What does the invoice processing product do?",
                 Answer = "It captures invoices, classifies and splits documents, extracts and validates " +
                          "the data, resolves the supplier, checks for duplicates and prepares a " +
                          "correct, controlled posting in your ERP, applying the applicable tax and " +
@@ -290,7 +290,7 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Invoice Processing",
-                Question = "What type of files can the workforce handle?",
+                Question = "What type of files can the product handle?",
                 Answer = "Invoices in any format - image, PDF, XML/JSON, Word or Excel - regardless of " +
                          "whether they come in by email, scan, e-invoicing or API."
             }
@@ -299,19 +299,19 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel OrderConfirmations = new()
     {
-        Section = "Workforce / Order Confirmations",
-        Eyebrow = "Workforce",
+        Section = "Product / Order Confirmations",
+        Eyebrow = "Product",
         Title = "Ensure your POs turn into correct deliveries, every time.",
         Lead = "Purchase orders are structured, but acknowledgments are not. From PDFs to emails, the " +
-               "workforce turns unstructured supplier replies into ERP-ready confirmations - fast, " +
+               "product turns unstructured supplier replies into ERP-ready confirmations - fast, " +
                "accurate and touchless.",
-        MetaDescription = "A workforce catching and matching every line, price and quantity on " +
+        MetaDescription = "A product catching and matching every line, price and quantity on " +
                           "supplier order confirmations.",
         Sections =
         [
             new ContentSection(
                 "How it works",
-                "A workforce for instant clarity on order status",
+                "A product for instant clarity on order status",
                 null,
                 []),
             new ContentSection(
@@ -340,7 +340,7 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Order Confirmations",
-                Question = "What does the Order Confirmations workforce do?",
+                Question = "What does the Order Confirmations product do?",
                 Answer = "It reads supplier order confirmations, matches them against the purchase " +
                          "order on price, quantity and dates, and gives procurement clarity on which " +
                          "orders are confirmed as expected and which deviate."
@@ -357,14 +357,14 @@ public static class ContentPageCatalog
             {
                 Category = "Order Confirmations",
                 Question = "What happens when a confirmation deviates from the PO?",
-                Answer = "When the workforce cannot resolve a deviation with the current business " +
+                Answer = "When the product cannot resolve a deviation with the current business " +
                          "knowledge, it escalates the case as an exception to the owner, with the " +
                          "reason and the context needed to resolve it."
             },
             new Faq
             {
                 Category = "Order Confirmations",
-                Question = "Does the workforce communicate with suppliers?",
+                Question = "Does the product communicate with suppliers?",
                 Answer = "Yes. A dedicated Supplier & Approver Communication skill handles " +
                          "clarifications and follow-ups inside the process instead of in scattered " +
                          "channels."
@@ -374,20 +374,20 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel DeliveryNotes = new()
     {
-        Section = "Workforce / Delivery Notes",
-        Eyebrow = "Workforce",
+        Section = "Product / Delivery Notes",
+        Eyebrow = "Product",
         Title = "For finance teams who are done guessing pay or hold.",
         Lead = "Agents capture delivery notes from email, EDI, carrier portal or scan, and validate " +
                "them against the PO. Mismatches are flagged and resolved before AP sees the invoice. " +
                "Once posted, the goods receipt and decision log keep Finance, Procurement and " +
                "suppliers aligned.",
-        MetaDescription = "A workforce turning delivery notes into validated receipts and reliable " +
+        MetaDescription = "A product turning delivery notes into validated receipts and reliable " +
                           "goods receipts.",
         Sections =
         [
             new ContentSection(
                 "How it works",
-                "A workforce making even partial deliveries a breeze",
+                "A product making even partial deliveries a breeze",
                 null,
                 []),
             new ContentSection(
@@ -416,7 +416,7 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Delivery Notes",
-                Question = "What does the Delivery Notes workforce do?",
+                Question = "What does the Delivery Notes product do?",
                 Answer = "It turns delivery notes into validated goods receipts: capturing the " +
                          "document, matching lines against the order, and recording what actually " +
                          "arrived, so finance decides pay or hold on facts."
@@ -441,19 +441,19 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel OrderManagement = new()
     {
-        Section = "Workforce / Order Management",
-        Eyebrow = "Workforce",
+        Section = "Product / Order Management",
+        Eyebrow = "Product",
         Title = "Capture all new business. Do 0% manual work.",
         Lead = "Orders come in from email, portals, EDI and more. Agents identify, classify and match " +
                "each to the latest catalogue, even with typos or outdated codes, then decide how to " +
                "route it using data from every connected system.",
-        MetaDescription = "A workforce validating sales orders against catalogue, pricing and volume " +
+        MetaDescription = "A product validating sales orders against catalogue, pricing and volume " +
                           "before they enter the ERP.",
         Sections =
         [
             new ContentSection(
                 "How it works",
-                "A workforce for sales order consistency - peak season or slow",
+                "A product for sales order consistency - peak season or slow",
                 null,
                 []),
             new ContentSection(
@@ -481,7 +481,7 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Order Management",
-                Question = "What does the Order Management workforce do?",
+                Question = "What does the Order Management product do?",
                 Answer = "It captures incoming sales orders, validates them against catalogue, pricing " +
                          "and volume rules, routes exceptions to the right owner and creates clean " +
                          "orders in your ERP."
@@ -515,13 +515,13 @@ public static class ContentPageCatalog
 
     public static readonly ContentPageModel BuildYourOwn = new()
     {
-        Section = "Workforce / Build Your Own",
-        Eyebrow = "Workforce",
-        Title = "Build your own workforce on the Polypus platform",
+        Section = "Product / Build Your Own",
+        Eyebrow = "Product",
+        Title = "Build your own product on the Polypus platform",
         Lead = "Define the process and the skills your operation needs. We staff agents equipped to " +
                "run them, with the same controls and integrations available across the standard " +
                "offering.",
-        MetaDescription = "Build access to the Polypus platform to create your own workforce for " +
+        MetaDescription = "Build access to the Polypus platform to create your own product for " +
                           "entirely new document types.",
         Sections =
         [
@@ -529,7 +529,7 @@ public static class ContentPageCatalog
                 "The offer",
                 "For documents outside the standard list",
                 "Build Your Own is the offer for documents outside the available named solutions. You " +
-                "get build access to the Polypus platform and create your own workforce for entirely " +
+                "get build access to the Polypus platform and create your own product for entirely " +
                 "new document types.",
                 []),
             new ContentSection(
@@ -547,10 +547,10 @@ public static class ContentPageCatalog
             new Faq
             {
                 Category = "Build Your Own",
-                Question = "What does Build Your Own Workforce mean?",
+                Question = "What does Build Your Own Product mean?",
                 Answer = "Build Your Own is the offer for documents outside the available named " +
                          "solutions. You get build access to the Polypus platform and create your own " +
-                         "workforce for entirely new document types, with the same controls and " +
+                         "product for entirely new document types, with the same controls and " +
                          "integrations available across the standard offering."
             },
             new Faq
@@ -559,7 +559,7 @@ public static class ContentPageCatalog
                 Question = "Can we build our own agents?",
                 Answer = "Yes. You can get builder access to the Polypus platform to create your own " +
                          "agents to classify, extract and enrich documents, supported by the same " +
-                         "supervision model and controls as the out-of-the-box workforce bundles."
+                         "supervision model and controls as the out-of-the-box product bundles."
             }
         ]
     };
@@ -602,7 +602,7 @@ public static class ContentPageCatalog
                 "micromanage.",
                 [
                     new ContentItem("AI Agents", "Digital workers for business support. Each agent performs an expert task for processing a transaction, with one job: to complete it compliantly.", "user-check"),
-                    new ContentItem("Workforce HITL", "Inspect every transaction, down to the decisions. Review and correct results, surface where agents need human input, and manage work queues.", "users"),
+                    new ContentItem("Product HITL", "Inspect every transaction, down to the decisions. Review and correct results, surface where agents need human input, and manage work queues.", "users"),
                     new ContentItem("Setup", "Choose from a broad catalogue of models to power your agents, manage the tools they use, and test and deploy them securely.", "layers"),
                     new ContentItem("Knowledge Management", "Teach agents how your business works: instruct them in natural language, feed know-how on the go, and ground them in business history.", "sparkle")
                 ]),
@@ -640,7 +640,7 @@ public static class ContentPageCatalog
                 Category = "Platform",
                 Question = "How do agents work together?",
                 Answer = "Each agent owns a step and hands the case to the next with full context, " +
-                         "forming a workforce for the whole process. The handoffs keep the context of " +
+                         "forming a product for the whole process. The handoffs keep the context of " +
                          "each case intact from step to step."
             },
             new Faq
@@ -649,7 +649,7 @@ public static class ContentPageCatalog
                 Question = "What is a Polypus agent?",
                 Answer = "A digital coworker that runs a step within a process or a workflow. An agent " +
                          "reasons about its task, uses tools, accesses core systems and master data, " +
-                         "and collaborates with the other agents within a workforce."
+                         "and collaborates with the other agents within a product."
             }
         ]
     };
@@ -675,15 +675,15 @@ public static class ContentPageCatalog
                     new ContentItem("Use tools", "Agents access databases, coding libraries, handbooks and integrations to complete work without system re-engineering.", "plug")
                 ]),
             new ContentSection(
-                "The workforce",
-                "Agents working together to form a workforce",
-                "Explore the pre-packaged workforce bundles, designed for the most common scenarios.",
+                "The product",
+                "Agents working together to form a product",
+                "Explore the pre-packaged product bundles, designed for the most common scenarios.",
                 [
-                    new ContentItem("Invoice Processing", "A workforce that captures, codes, matches and validates every invoice.", "scan"),
-                    new ContentItem("Order Confirmations", "A workforce catching and matching every line, price and quantity.", "check-circle"),
-                    new ContentItem("Delivery Notes", "A workforce turning delivery notes into validated receipts.", "layers"),
-                    new ContentItem("Order Management", "A workforce validating sales orders against catalogue, pricing and volume.", "flow"),
-                    new ContentItem("Dunning Letters", "A workforce that captures, matches and resolves every dunning letter.", "mail"),
+                    new ContentItem("Invoice Processing", "A product that captures, codes, matches and validates every invoice.", "scan"),
+                    new ContentItem("Order Confirmations", "A product catching and matching every line, price and quantity.", "check-circle"),
+                    new ContentItem("Delivery Notes", "A product turning delivery notes into validated receipts.", "layers"),
+                    new ContentItem("Order Management", "A product validating sales orders against catalogue, pricing and volume.", "flow"),
+                    new ContentItem("Dunning Letters", "A product that captures, matches and resolves every dunning letter.", "mail"),
                     new ContentItem("Build Your Own", "Define the process and skills your operation needs. We staff agents equipped to run them.", "sparkle")
                 ])
         ],
@@ -695,14 +695,14 @@ public static class ContentPageCatalog
                 Question = "What is a Polypus agent?",
                 Answer = "A digital coworker that runs a step within a process or a workflow. An agent " +
                          "reasons about its task, uses tools, accesses core systems and master data, " +
-                         "and collaborates with the other agents within a workforce."
+                         "and collaborates with the other agents within a product."
             },
             new Faq
             {
                 Category = "Agents",
                 Question = "How do agents work together?",
                 Answer = "Each agent owns a step and hands the case to the next with full context, " +
-                         "forming a workforce for the whole process. The handoffs keep the context of " +
+                         "forming a product for the whole process. The handoffs keep the context of " +
                          "each case intact from step to step."
             },
             new Faq
@@ -711,7 +711,7 @@ public static class ContentPageCatalog
                 Question = "Can we build our own agents?",
                 Answer = "Yes. You can get builder access to the Polypus platform to create your own " +
                          "agents to classify, extract and enrich documents, supported by the same " +
-                         "supervision model and controls as the out-of-the-box workforce bundles."
+                         "supervision model and controls as the out-of-the-box product bundles."
             }
         ]
     };
@@ -738,7 +738,7 @@ public static class ContentPageCatalog
                     new ContentItem("The Governance Gap: 5 Considerations For Building A Controls Framework for Agentic AI", "How do you fit agentic AI into your internal controls framework? Which controls are built in and which do you need to configure yourself?", "shield-check"),
                     new ContentItem("Back-Office Automation in Practice: Exploring the Reality Behind the GBS AI Hype", "Setting the record straight. How far has the industry come with agentic AI and how can we bridge the gap from ambition to reality.", "chart"),
                     new ContentItem("Token costs are the new budget risk in agentic AI. Here's how to plan for them", "Token pricing can vary 20x between models. Why outcome-based pricing, not token tracking, is the safer bet for leaders.", "sparkle"),
-                    new ContentItem("How Agentic AI Affects Your Workforce", "Understand how agentic AI affects your workforce when 90% of work is automated and what it is like to work in a blended agent and human team.", "users"),
+                    new ContentItem("How Agentic AI Affects Your Product", "Understand how agentic AI affects your product when 90% of work is automated and what it is like to work in a blended agent and human team.", "users"),
                     new ContentItem("Stop Automating the Old Process: Why Agentic AI Demands a New Way of Thinking", "Don't make the same mistakes twice. How processes should change to fully embrace agentic AI.", "flow"),
                     new ContentItem("How to Scale Agentic AI Without Things Breaking", "Expert advice on orchestration, technology and change management when moving from pilots to scale.", "layers"),
                     new ContentItem("The GPO Is Now the Most Important Role in Your Agentic AI Transformation", "Most organisations hand agentic AI to IT and wonder why it fails. Why the Global Process Owner is the most critical role.", "user-check"),
@@ -824,7 +824,7 @@ public static class ContentPageCatalog
                 [
                     new ContentItem("AI-ready operating models", "Practical guidance on the operating model that agentic work demands.", "building"),
                     new ContentItem("Data foundations that deliver value", "The unglamorous groundwork that determines whether AI succeeds or fails.", "layers"),
-                    new ContentItem("Workforce reskilling and redeployment", "Leading hybrid human and agent teams without losing your people.", "users")
+                    new ContentItem("Product reskilling and redeployment", "Leading hybrid human and agent teams without losing your people.", "users")
                 ])
         ],
         Faqs =
@@ -913,7 +913,7 @@ public static class ContentPageCatalog
         Title = "Frequently Asked Questions",
         Lead = "Your go-to resource for answers to commonly asked questions about Polypus.",
         MetaDescription = "Answers to commonly asked questions about the Polypus platform, its " +
-                          "workforce, skills and integrations.",
+                          "product, skills and integrations.",
         Sections =
         [
             new ContentSection(
@@ -995,7 +995,7 @@ public static class ContentPageCatalog
                 [
                     new ContentItem("Document intake", "Submit documents by API wherever they originate, alongside email and network drop folders.", "download"),
                     new ContentItem("Status and results", "Poll or receive webhooks for extraction, review and posting state, down to the decision.", "flow"),
-                    new ContentItem("Master data", "Read and write the master data lookups the workforce uses for enrichment and matching.", "layers"),
+                    new ContentItem("Master data", "Read and write the master data lookups the product uses for enrichment and matching.", "layers"),
                     new ContentItem("Authentication", "Scoped credentials per tenant, with rotation and an audit log of every call.", "lock")
                 ])
         ]
